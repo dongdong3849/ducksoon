@@ -49,10 +49,11 @@ section.category {
     padding: 2vw 1.5vw; /* padding adjusted with viewport width */
     background-color: #FDEFF0;
     border-radius: 0.5vw; /* border-radius adjusted with viewport width */
+    overflow: hidden;
 }
 
 section.category h1 {
-    font-size: 1.2rem; /* font-size adjusted to rem */
+    font-size: 1rem; /* font-size adjusted to rem */
 }
 
 section.category ul {
@@ -146,21 +147,170 @@ section.cartList .clist {
 }
 
 section.cartList .clist .cd {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
 section.cartList .clist .cd > div {
+    width: 1rem;
     height: 1rem; /* height adjusted to rem */
 }
 
 section.cartList .clist .listGoods {
     width: 100%;
     display: flex;
+    padding: 1vh 1rem;
+    gap: 5vw;
+    position: relative;
 }
 
 section.cartList .clist .listGoods .gImg {
     border: 0.1rem solid #000; /* border adjusted to rem */
-    width: 30vw; /* width adjusted with viewport width */
-    height: 40vw; /* height adjusted with viewport width */
+    width: clamp(108px, 20%, 156px); 
+    height: clamp(107px, 20%, 155px);
+}
+
+
+section.cartList .clist .listGoods .gImg img {
+    width: 100%;
+    height: 100%;
+}
+
+section.cartList .clist .listGoods .info {
+    font-size: clamp(14px, 2.5vw, 20px);
+    white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+    overflow: hidden; /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 '...'으로 표시 */
+    width: clamp(203px, 60vw, 672px); /* 글상자의 너비 설정 */
+    color: #000;
+}
+
+section.cartList .clist .listGoods .info span {
+    color: #aaa;
+    line-height: 2vh;
+}
+
+section.cartList .clist .listGoods .decision {
+    position: absolute;
+    right: 1rem;
+    align-items: right;
+    text-align: right;  /* 임시 코드 */
+}
+
+section.cartList .clist .listGoods .decision p {
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+section.cartList .clist .listGoods .decision .quantity {
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+section.cartList .cartandpay .pay {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 18px 13px;
+    display: grid;
+    grid-template-columns: 1fr; /* 한 열에 하나의 div */
+    row-gap: 33px; /* 행 간격 조절 */
+}
+
+section.cartList .cartandpay .pay h1 {
+    color: #000;
+    font-size: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #bdbdbd ;
+}
+
+section.cartList .cartandpay .pay .payM {
+    display: grid;
+    grid-template-columns: 1fr; /* 한 열에 하나의 div */
+    row-gap: 23px; /* 행 간격 조절 */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #bdbdbd ;
+}
+
+section.cartList .cartandpay .pay .payM .pm {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.cartList .cartandpay .pay .payM .pm > p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+section.cartList .cartandpay .pay .payB {
+    display: grid;
+    grid-template-columns: 1fr; /* 한 열에 하나의 div */
+    row-gap: 23px; /* 행 간격 조절 */
+}
+
+section.cartList .cartandpay .pay .payB .pb {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.cartList .cartandpay .pay .payB .pb > p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+section.cartList .cartandpay .pay .payB .pb:nth-of-type(3) > p {
+    color: #9c9c9c;
+}
+
+.choose {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* 한 열에 하나의 div */
+    row-gap: 12px;
+}
+
+.choose .alls {
+    padding: 16px 0;
+    background-color: #D71313;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.choose .sels {
+    padding: 16px 0;
+    background-color: #d9d9d9;
+    color: #000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+section.guide {
+    margin-top: 20px;
+    border: 1px solid #000;
+    padding: 11px 13px;
+}
+
+section.guide > h1 {
+    font-size: clamp(10px, 2vw, 20px);
+}
+
+section.guide > ul {
+    margin-top: 20px;
+}
+
+section.guide ul > li {
+    list-style: disc;
+    list-style-position: inside;
+    font-size: clamp(8px, 2vw, 15px);
+    line-height: clamp(15px, 4vw, 25px);
+}
+
+section.guide h1:nth-of-type(2) {
+    margin-top: 20px;
+}
+
+section.guide p {
+    margin-top: 20px;
+    font-size: clamp(8px, 2vw, 15px);
 }
