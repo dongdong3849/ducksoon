@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+:root {
+    /* 색상 변수 */
+    --main-color-red : #D71313;
+    --main-color-blue : #022CFF;
+    --main-color-beige : #FCEFE8;
+
+    --color-black : #000;
+    --color-white : #fff;
+    --color-gray : #D9D9D9;
+
+    /* 로고 그림자 변수 */
+    --logo-drop-shadow : drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/***** header(모바일) *****/
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+/* red 영역 */
+.m-h-red-container {
+    height: 100px;
+    background-color: var(--main-color-red);
+    padding: 0 20px;
+}
+.m-h-icon-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 50px;
+}
+.m-h-icon-left,
+.m-h-icon-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.m-h-icon-left .logo img {
+    filter: var(--logo-drop-shadow);
+}
+
+/***** footer(모바일) *****/
+footer {
+    width: 100%;
+    height: 480px;
+    padding: 20px;
+    background-color: var(--main-color-red);
+    color: var(--color-white);
+}
+/* footer logo */
+.f-logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.f-logo img {
+    filter: var(--logo-drop-shadow);
+}
+
+/* csr, comm */
+.c-f-csr-comm-container {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+h6 {
+    font-family: var(--base-font-en-ko-700);
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+/* csr */
+.csr > a {
+    display: block;
+    font-family: var(--point-font-en-ko);
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+.csr > p {
+    font-family: var(--base-font-en-ko-500);
+    font-size: 10px;
+
+}
+/* comm */
+.f-menu {
+    display: flex;
+    gap: 15px;
+    font-family: var(--point-font-en-ko);
+    font-size: 16px;
+}
+.f-menu ul a {
+    display: block;
+    padding-bottom: 5px;
+}
+/* 회사 정보 */
+.company {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.company p {
+    font-family: var(--base-font-en-ko-500);
+    text-align: center;
+    font-size: 12px;
+}
+/* 하단 네비 */
+.c-f-nav {
+    font-family: var(--base-font-en-ko-700);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.c-f-nav ul {
+    display: flex;
+    gap: 10px;
+}

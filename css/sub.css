@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/***** header *****/
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+/* red 영역 */
+.m-h-red-container {
+    height: 100px;
+    background-color: var(--main-color-red);
+    padding: 0 20px;
+}
+.m-h-icon-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 50px;
+}
+.m-h-icon-left,
+.m-h-icon-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.m-h-icon-left .logo {
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/***** main *****/
+main {
+    width: 100%;
+    height: 1000px;
+    padding: 0 20px;
+    background-color: blanchedalmond;
+}
+/* cart, wishlist, buy */
+.m-m-cart-wish-buy-container {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white);
+    font-family: var(--base-font-en-ko-500);
+}
+.m-m-cart-wish-buy-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+/* cart */
+.m-m-cart-wish-buy-wrapper .cart {
+    width: calc(100% - 90%);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gray);
+    border-radius: 10px;
+}
+/* wishlist */
+.m-m-cart-wish-buy-wrapper .wish {
+    width: calc(100% - 60%);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gray);
+    border-radius: 10px;
+}
+.m-m-cart-wish-buy-wrapper .wish a {
+    display: flex;
+    gap: 5px;
+}
+.m-m-cart-wish-buy-wrapper .wish a p {
+    padding-top: 3px;
+}
+.m-m-cart-wish-buy-wrapper .wish a .focus {
+    display: none;
+}
+/* wishlist (찜 눌렀을 때) */
+.m-m-cart-wish-buy-wrapper .wish a:focus .default {
+    display: none;
+}
+.m-m-cart-wish-buy-wrapper .wish a:focus .focus {
+    display: block;
+}
+/* buy */
+.m-m-cart-wish-buy-wrapper .buy {
+    width: calc(100% - 40%);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color-red);
+    border-radius: 10px;
+}
+.m-m-cart-wish-buy-wrapper .buy p {
+    color: var(--color-white);
+}
+
+/***** footer *****/
+/* footer {
+
+} */

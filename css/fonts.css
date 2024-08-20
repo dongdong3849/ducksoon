@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* 폰트 변수 설정 */
+:root {
+    --base-font-en-ko-300 : 'GmarketSansLight';
+    --base-font-en-ko-500 : 'GmarketSansMedium';
+    --base-font-en-ko-700 : 'GmarketSansBold';
+    --point-font-en-ko : 'NeoDunggeunmoPro-Regular';
+}
+
+/* 기본 폰트 : G마켓 산스 */
+/* weight 300 : light / 500 : medium / 700 : bold */
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 포인트 폰트 : Neo둥근고딕Pro */
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
