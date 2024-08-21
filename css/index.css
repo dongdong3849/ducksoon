@@ -18,7 +18,7 @@ header {
 .m_h_red_container {
     height: 8vh; /* height adjusted with viewport height */
     background-color: var(--main-color-red);
-    padding: 0 2vw; /* padding adjusted with viewport width */
+    padding: 0 20px; /* padding adjusted with viewport width */
 }
 
 .m_h_icon_container {
@@ -40,7 +40,7 @@ header {
 main {
     width: 100%;
     margin-top: 8vh; /* margin-top adjusted with viewport height */
-    padding: 2vw; /* padding adjusted with viewport width */
+    padding: 20px; /* padding adjusted with viewport width */
 }
 
 /* ================================ 카테고리 추천 ============================== */
@@ -72,6 +72,10 @@ section.category ul li {
     text-align: center; /* 텍스트를 중앙 정렬 */
     line-height: 1.5; /* 줄 높이 조정 */
     font-size: 1rem; /* font-size adjusted to rem */
+}
+
+section.category ul > li:hover {
+    text-decoration: underline;
 }
 
 section.category .goodsGroup {
@@ -128,31 +132,69 @@ section.category .goodsGroup .goods .cartBtn {
     border-radius: 5px; /* border-radius adjusted with viewport width */
 }
 
+section.category .goodsGroup .goods .cartBtn:hover {
+    background-color: #b61010;
+    text-decoration: underline;
+}
+
+section.category .goodsGroup .goods .cartBtn:active {
+    background-color: #9c0f0f;
+}
+
 /* =================================장바구니 리스트============================= */
 
 section.cartList {
     margin-top: 2vh; /* margin-top adjusted with viewport height */
 }
 
-section.cartList h1 {
+section.cartList  h1 {
     font-size: 1.1rem; /* font-size adjusted to rem */
     color: #000;
 }
 
+section.cartList .clist button.Dl {
+    background-color: #D71313;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+section.cartList .clist button.Dl:hover {
+    background-color: #b80000;
+    text-decoration: underline;
+}
+
+section.cartList .clist button.Dl:active {
+    background-color: #640000;
+}
+
+
 section.cartList .clist {
-    margin-top: 1vh; /* margin-top adjusted with viewport height */
+    
     border-top: 0.1rem solid #000; /* border adjusted to rem */
     border-bottom: 0.1rem solid #000; /* border adjusted to rem */
-    padding: 1.5vh 0; /* padding adjusted with viewport height */
 }
 
-section.cartList .clist .cd {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+
+section.cartList .clist .cBox {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 10px 0;
 }
 
-section.cartList .clist .cd > div {
+section.cartList .clist .cBox:first-of-type {
+    border-top: 1px solid #000;
+}
+
+
+section.cartList .clist .cBox:last-of-type {
+    border-bottom: none;
+}
+
+
+section.cartList .clist .cd .gImg {
     width: 1rem;
     height: 1rem; /* height adjusted to rem */
 }
@@ -161,12 +203,13 @@ section.cartList .clist .listGoods {
     width: 100%;
     display: flex;
     padding: 1vh 1rem;
-    gap: 5vw;
+    gap: 15px;
     position: relative;
 }
 
 section.cartList .clist .listGoods .gImg {
     border: 0.1rem solid #000; /* border adjusted to rem */
+    border-radius: 5px;
     width: clamp(108px, 20%, 156px); 
     height: clamp(107px, 20%, 155px);
 }
@@ -175,6 +218,13 @@ section.cartList .clist .listGoods .gImg {
 section.cartList .clist .listGoods .gImg img {
     width: 100%;
     height: 100%;
+}
+
+section.cartList .clist .cBox .listGoods .price {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    gap: 45px; 
+    flex: 1;
 }
 
 section.cartList .clist .listGoods .info {
@@ -192,18 +242,43 @@ section.cartList .clist .listGoods .info span {
 }
 
 section.cartList .clist .listGoods .decision {
-    position: absolute;
-    right: 1rem;
+    display: flex;
+    flex-direction: column;
     align-items: right;
-    text-align: right;  /* 임시 코드 */
+    row-gap: 14px;
 }
 
 section.cartList .clist .listGoods .decision p {
     font-size: clamp(20px, 3vw, 30px);
+    text-align: right;  
 }
 
-section.cartList .clist .listGoods .decision .quantity {
-    font-size: clamp(20px, 3vw, 30px);
+section.cartList .clist .listGoods .decision .quantity-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+section.cartList .clist .listGoods .decision .quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+section.cartList .clist .listGoods .decision #quantity {
+    width: 55px;
+    height: 30px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    /* padding: 5px 25px; */
 }
 
 section.cartList .cartandpay .pay {
@@ -252,6 +327,10 @@ section.cartList .cartandpay .pay .payB .pb {
     justify-content: space-between;
 }
 
+section.cartList .cartandpay .pay .payB .pb:nth-of-type(1) > p {
+    font-size: 20px;
+}
+
 section.cartList .cartandpay .pay .payB .pb > p {
     font-size: 16px;
     font-weight: bold;
@@ -277,6 +356,15 @@ section.cartList .cartandpay .pay .payB .pb:nth-of-type(3) > p {
     text-align: center;
 }
 
+.choose .alls:hover {
+    text-decoration: underline;
+    background-color: #b61010;
+}
+
+.choose .alls:active {
+    background-color: #9b0e0e;
+}
+
 .choose .sels {
     padding: 16px 0;
     background-color: #d9d9d9;
@@ -285,9 +373,19 @@ section.cartList .cartandpay .pay .payB .pb:nth-of-type(3) > p {
     text-align: center;
 }
 
+.choose .sels:hover {
+    text-decoration: underline;
+    background-color: #9c9c9c;
+}
+
+.choose .sels:hover:active {
+    background-color: #7c7c7c;
+}
+
 section.guide {
     margin-top: 20px;
     border: 1px solid #000;
+    border-radius: 5px;
     padding: 11px 13px;
 }
 
@@ -306,6 +404,7 @@ section.guide ul > li {
     line-height: clamp(15px, 4vw, 25px);
 }
 
+
 section.guide h1:nth-of-type(2) {
     margin-top: 20px;
 }
@@ -313,4 +412,51 @@ section.guide h1:nth-of-type(2) {
 section.guide p {
     margin-top: 20px;
     font-size: clamp(8px, 2vw, 15px);
+}
+
+
+/* ========================미디어 쿼리======================== */
+
+@media (max-width: 1280px){
+
+section.cartList .cartandpay {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 1vh; /* margin-top adjusted with viewport height */
+    row-gap: 2vh;
+}
+
+}
+
+
+
+@media (min-width: 1281px){
+    
+    main {
+        padding: 20px 270px;
+    }
+
+
+section.cartList .cartandpay {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    margin-top: 1vh;
+}
+
+section.cartList .cartandpay .clist {
+    width: 900px;
+}
+
+section.cartList .cartandpay .price {
+    width: 444px;
+}
+section.cartList .clist .listGoods .gImg {
+    border: 1px solid #000; /* border adjusted to rem */
+    width: 156px; 
+    height: 155px;
+}
+
+
+
 }

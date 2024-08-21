@@ -19,6 +19,56 @@ function floatingCircle(item, delayAfter, size) {
     );
 }
 
+// ======================= 수량 =============================
+
+// 수량 증가 함수
+function increase(event, button) {
+    event.preventDefault(); // 버튼 클릭 시 기본 동작 방지
+    const quantityInput = button.parentElement.querySelector('#quantity');
+    let currentValue = parseInt(quantityInput.value, 10);
+    if (!isNaN(currentValue)) {
+        quantityInput.value = currentValue + 1;
+    }
+}
+
+// 수량 감소 함수
+function decrease(event, button) {
+    event.preventDefault(); // 버튼 클릭 시 기본 동작 방지
+    const quantityInput = button.parentElement.querySelector('#quantity');
+    let currentValue = parseInt(quantityInput.value, 10);
+    if (!isNaN(currentValue) && currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const box1 = document.querySelector('.clist');
+    const box2 = document.querySelector('.clHeader');
+
+
+    if (box1) {
+        const box1Width = box1.offsetWidth;
+
+        if (box2) {
+            box2.style.width = `${box1Width}px`;
+        }
+
+    }
+});
+
+// ======================선택삭제============================
+
+function deleteSelectedItems() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            const item = checkbox.closest('.cBox');
+            item.remove();
+        }
+    });
+}
+
+
 floatingCircle('.pI1', 0.5, 25);
 floatingCircle('.pI2', 1, 20);
 floatingCircle('.pI3', 1.5, 10);

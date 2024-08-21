@@ -162,45 +162,64 @@
         <section class="cartList">
             <h1>장바구니 (2)</h1>
             <div class="cartandpay">
-                <div class="clist">
-                  <div class="cd">
-                    <div class="checkbox"><img src="./images/cart/선택버튼.svg" alt="선택버튼"></div>
-                    <div class="dellitbox"><img src="./images/cart/삭제버튼.svg" alt="삭제버튼"></div>
-                    </div>
-                    <div class="listGoods">
-                        <div class="gImg"><img src="./images/cart/제품사진1.jpg" alt="제품사진"></div>
-                        <div class="price">
-                            <div class="info">
-                                워터프루프 리무버블 BIG 조각스티커 ver.3
-                                <br>1,500원
-                                <br><span>배송:2,500원 [조건]/기본배송</span>
+                <form class="clist">
+                    <button  class="Dl" type="button" onclick="deleteSelectedItems()">선택 항목 삭제</button>
+                    <div class="cBox">
+                        <label for="checkbox1">
+                            <div class="cd">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox1">
+                                </div>
                             </div>
-                            <div class="decision">
-                                <p>1,500원</p>
-                                <div class="quantity">- 1 +</div>
+                            <div class="listGoods">
+                                <div class="gImg"><img src="./images/cart/제품사진1.jpg" alt="워터프루프 리무버블 BIG 조각스티커 ver.3"></div>
+                                <div class="price">
+                                    <div class="info">
+                                        워터프루프 리무버블 BIG 조각스티커 ver.3
+                                        <br>1,500원
+                                        <br><span>배송:2,500원 [조건]/기본배송</span>
+                                    </div>
+                                    <div class="decision">
+                                        <p>1,500원</p>
+                                        <div class="quantity-container">
+                                            <button class="quantity-btn" onclick="decrease(event, this)">-</button>
+                                            <input type="text" id="quantity" value="1" readonly>
+                                            <button class="quantity-btn" onclick="increase(event, this)">+</button>
+                                        </div>                                        
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </label>
                     </div>
-                    <div class="cd">
-                    <div class="checkbox"><img src="./images/cart/선택버튼.svg" alt="선택버튼"></div>
-                    <div class="dellitbox"><img src="./images/cart/삭제버튼.svg" alt="삭제버튼"></div>
-                    </div>
-                    <div class="listGoods">
-                        <div class="gImg"><img src="./images/cart/제품사진1.jpg" alt="제품사진"></div>
-                        <div class="price">
-                            <div class="info">
-                                워터프루프 리무버블 BIG 조각스티커 ver.3
-                                <br>1,500원
-                                <br><span>배송:2,500원 [조건]/기본배송</span>
+                    <div class="cBox">
+                        <label for="checkbox2">
+                            <div class="cd">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox2">
+                                </div>
                             </div>
-                            <div class="decision">
-                                <p>1,500원</p>
-                                <div class="quantity">- 1 +</div>
+                            <div class="listGoods">
+                                <div class="gImg"><img src="./images/cart/제품사진1.jpg" alt="워터프루프 리무버블 BIG 조각스티커 ver.3"></div>
+                                <div class="price">
+                                    <div class="info">
+                                        워터프루프 리무버블 BIG 조각스티커 ver.3
+                                        <br>1,500원
+                                        <br><span>배송:2,500원 [조건]/기본배송</span>
+                                    </div>
+                                    <div class="decision">
+                                        <p>1,500원</p>
+                                        <div class="quantity-container">
+                                            <button class="quantity-btn" onclick="decrease(event, this)">-</button>
+                                            <input type="text" id="quantity" value="1" readonly>
+                                            <button class="quantity-btn" onclick="increase(event, this)">+</button>
+                                        </div>     
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </label>
                     </div>
-
-                </div>
+                </form>
+                
                 <div class="price">
                     <div class="pay">
                         <h1>주문상품</h1>
@@ -210,9 +229,9 @@
                             <div class="pm"><p>총 할인금액</p><p>0원</p></div>
                         </div>
                         <div class="payB">
-                            <div class="pb"><p>총 상품금액</p><p>1,500원</p></div>
-                            <div class="pb"><p>총 배송비</p><p>2,500원</p></div>
-                            <div class="pb"><p>총 할인금액</p><p>0원</p></div>
+                            <div class="pb"><p>결제예정금액</p><p>1,500원</p></div>
+                            <div class="pb"><p>적릭예정금액</p><p>최대 10원</p></div>
+                            <div class="pb"><p>상품별 적립금</p><p>0원</p></div>
                         </div>
                     </div>
                     <div class="choose">
