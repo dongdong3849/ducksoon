@@ -14,7 +14,7 @@
     --logo-drop-shadow : drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
-/***** header(모바일) *****/
+/***** header mobile style *****/
 header {
     width: 100%;
     position: fixed;
@@ -34,6 +34,88 @@ header {
     position: relative;
     top: 50px;
 }
+
+/* ======================================================================== */
+#main-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-color: var(--main-color-beige);
+    color: var(--main-color-red);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    min-width: 285px;
+    max-width: 400px;
+    z-index: 99999;
+}
+
+.side-bar.active {
+    transform: translateX(0); /* 사이드바가 화면에 나타남 */
+}
+
+.side-bar-header {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 55px 85px 20px 10px;
+    margin-left: 10px;
+    border-bottom: 3px solid var(--main-color-red);
+}
+
+.side-bar-header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.side-bar-header>img {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.side-bar nav ul {
+    list-style-type: none;
+    margin: 32px 0 0 0;
+    width: 100%;
+}
+
+.side-bar nav ul li {
+    margin: 20px 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--main-color-red);
+}
+
+.side-bar nav ul li a {
+    color: var(--main-color-red);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: var(--point-font-en-ko);
+}
+
+.side-bar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.side-bar nav ul li a span {
+    float: right;
+}
+
+/* ======================================================================== */
+
 .m-h-icon-left,
 .m-h-icon-right {
     display: flex;
@@ -43,12 +125,16 @@ header {
 .m-h-icon-left .logo img {
     filter: var(--logo-drop-shadow);
 }
+/* pc header mobile 사이즈에서 숨김 */
+.p-h-container {
+    display: none;
+}
 
-/***** footer(모바일) *****/
+/***** footer mobile style *****/
 footer {
     width: 100%;
     height: 480px;
-    padding: 20px;
+    padding: 25px;
     background-color: var(--main-color-red);
     color: var(--color-white);
 }
@@ -56,7 +142,7 @@ footer {
 .f-logo {
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
+    padding-bottom: 45px;
 }
 .f-logo img {
     filter: var(--logo-drop-shadow);
@@ -69,7 +155,7 @@ footer {
     justify-content: space-between;
     margin-bottom: 30px;
 }
-h6 {
+.c-f-csr-comm-container h6 {
     font-family: var(--base-font-en-ko-700);
     font-size: 16px;
     padding-bottom: 10px;
@@ -95,7 +181,10 @@ h6 {
 }
 .f-menu ul a {
     display: block;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+}
+.f-menu ul li:hover {
+    color: var(--main-color-blue);
 }
 /* 회사 정보 */
 .company {
@@ -118,4 +207,186 @@ h6 {
 .c-f-nav ul {
     display: flex;
     gap: 10px;
+}
+
+
+/* 사이드 팝업메뉴 숨김 처리 */
+.p-sidePopup {
+    display: none;
+}
+
+
+/* ========================= tablet 769~ =========================*/
+@media (min-width: 769px) {
+    /***** footer pc style *****/
+    footer {
+        height: 320px;
+        overflow: hidden;
+    }
+    .f-logo {
+        justify-content: left;
+    }
+    .c-f-csr-comm-container {
+        width: 350px;
+    }
+    .company {
+        max-width: none;
+        width: 40%;
+        margin: 0;
+        height: auto;
+        float: right;
+        position: relative;
+        bottom: 40%;
+    }
+    .company p {
+        width: 100%;
+        text-align: right;
+    }
+    .c-f-nav {
+        position: relative;
+        left: 20%;
+    }
+}
+
+/*========================= pc 1280~ =========================*/
+@media (min-width: 1280px) {
+    .m-h-red-container {
+        display: none;
+    }
+
+    /***** header pc style *****/
+    .p-h-container {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .red {
+        width: 100%;
+        height: 30px;
+        background-color: var(--main-color-red);
+    }
+    .beige {
+        width: 100%;
+        height: 100px;
+        background-color: var(--main-color-beige);
+        position: relative;
+        padding: 0 150px;
+    }
+    .h-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .h-logo > img {
+        width: 100%;
+        height: auto;
+    }
+    .p-h-nav-container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .p-h-nav-container nav ul {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-family: var(--point-font-en-ko);
+        color: var(--main-color-red);
+    }
+    .p-h-nav-container nav ul li:hover {
+        color: var(--main-color-blue);
+    }
+    .header-design img {
+        width: 100%;
+        height: auto;
+    }
+
+    /***** footer pc style *****/
+    footer {
+        height: 500px;
+        padding: 100px 150px;
+    }
+    .f-logo img {
+        width: 200px;
+        height: auto;
+    }
+    .c-f-csr-comm-container {
+        width: 530px;
+    }
+    .c-f-csr-comm-container h6 {
+        font-size: 22px;
+    }
+    .csr > a {
+        font-size: 34px;
+    }
+    .csr > p {
+        font-size: 14px;
+    }
+    .f-menu {
+        font-size: 24px;
+    }
+    .company {
+        bottom: 55%;
+    }
+    .company p {
+        font-size: 14px;
+    }
+    .c-f-nav {
+        left: 40%;
+        bottom: 35%;
+        float: right;
+        font-size: 16px;
+    }
+    
+    /* sidePopup (pc 버전에서만 적용됨) */
+    .p-sidePopup {
+        position: fixed;
+        z-index: 9999;
+        bottom: 50px;
+        right: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        filter: var(--logo-drop-shadow);
+    }
+
+    .chatBot-box {
+        position: relative;
+    }
+
+    .count-badge {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        line-height: 25px;
+        top: -15px; /* 배지의 위치를 아이콘의 우측 상단으로 조정 */
+        right: -5px; /* 배지의 위치를 아이콘의 우측 상단으로 조정 */
+        background-color: #ffa023;
+        color: white;
+        padding: 5px 8px;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: bold;
+        min-width: 20px;
+        text-align: center;
+        /* display: none; */
+    }
+}
+
+/*========================= pc 1555~ (좌우 패딩 100 > 270) =========================*/
+@media (min-width: 1700px) {
+    /***** header pc style *****/
+    .beige {
+        padding: 0 270px;
+    }
+
+    /***** footer pc style *****/
+    footer {
+        padding: 100px 270px;
+    }
+    .p-h-nav-container nav ul {
+        font-size: 20px;
+    }
 }
